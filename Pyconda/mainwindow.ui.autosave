@@ -20,7 +20,7 @@
       <x>10</x>
       <y>0</y>
       <width>441</width>
-      <height>61</height>
+      <height>121</height>
      </rect>
     </property>
     <property name="title">
@@ -62,19 +62,84 @@
       <string>Load</string>
      </property>
     </widget>
+    <widget class="QLineEdit" name="edt_row">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>50</y>
+       <width>41</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>16</x>
+       <y>50</y>
+       <width>41</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Row</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>41</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Col</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="edt_col">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>80</y>
+       <width>41</width>
+       <height>21</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
-   <widget class="QGroupBox" name="groupBox_2">
+   <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>60</y>
+      <x>9</x>
+      <y>119</y>
       <width>441</width>
-      <height>61</height>
+      <height>111</height>
      </rect>
     </property>
     <property name="title">
-     <string>Properties</string>
+     <string>GroupBox</string>
     </property>
+    <widget class="QPushButton" name="btn_play">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>51</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&gt;</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
