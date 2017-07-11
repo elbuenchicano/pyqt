@@ -10,12 +10,11 @@ class sequence(object):
         self.current = 0
 
     def increment(self):
-        current = self.current + self.step  
-        if(current <= self.pos_fin):
-            self.current = current
-            return True
-        return False
-       
+        self.current = self.current + self.step  
+
+    def decrement(self):
+        self.current = self.current - self.step  
+              
 ################################################################################
 ################################################################################
 class video_sequence(sequence):
@@ -34,7 +33,7 @@ class video_sequence(sequence):
         last_frame      = self.cap.get(cv2.CAP_PROP_FRAME_COUNT)
 
         #validating the inputs
-        if( fin > last_frame ):
+        if( fin > int(last_frame) ):
             self.pos_fin    = last_frame
         else:
             self.pos_fin    = fin
@@ -47,6 +46,7 @@ class video_sequence(sequence):
     #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     #set a new frame position
     def setCurrent(self, pos):
+        self.current = pos - ( pos % self.step )
         return self.cap.set(cv2.CAP_PROP_POS_FRAMES, pos)
 
 ################################################################################
@@ -76,6 +76,8 @@ class video_sequence_byn(video_sequence):
     #return the current position frame
     def getCurrent(self):
         self.increment()
+        if self.current > self.pos_fin: 
+            return (False, [])
         self.setCurrent(self.current)
         return self.cap.read()
  
